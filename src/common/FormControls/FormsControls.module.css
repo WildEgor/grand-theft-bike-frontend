@@ -1,0 +1,32 @@
+input,
+textarea {
+  width: 100%;
+}
+
+.formControl.checkbox {
+  /* display: flex;
+  align-items: center;
+  height: 100%; */
+}
+
+.field {
+  position: relative;
+}
+
+.error {
+  border: 2px solid red;
+}
+
+.errorText {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 16px;
+  color: rgb(255, 0, 0);
+  opacity: 0;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.errorOn {
+  opacity: 1;
+}
