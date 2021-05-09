@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+  }
+input,
+textarea {
+  width: 100%;
+}
+
+._3xOUMef6JPJ3tojgHnQbgH._3bDMGj-UvLIjzXbLoTpOAU {
+  /* display: flex;
+  align-items: center;
+  height: 100%; */
+}
+
+._2HIkko8Pimj9ZPt17v06KN {
+  position: relative;
+}
+
+.OqI2bBu8INMUyX8NzwbdQ {
+  border: 2px solid red;
+}
+
+._1DUpFcJTHXSDgZhX-Wsyqw {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 16px;
+  color: rgb(255, 0, 0);
+  opacity: 0;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+._3KA_4LQVoYZJh6s2pDIsWi {
+  opacity: 1;
+}
+
