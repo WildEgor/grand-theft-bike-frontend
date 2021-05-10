@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import useStyles from 'Components/Officers/Officers.module'
-import close from "Img/close.svg";
-import edit from "Img/edit.svg";
+import CancelIcon from '@material-ui/icons/Cancel';
+import BorderColorIcon from '@material-ui/icons/BorderColor';
+import {StyledButton, StyledIconButton} from 'Style/components'
 
 const EditOfficer = ({
   officers,
@@ -32,7 +33,6 @@ const EditOfficer = ({
     setEditParamValue("");
   };
 
-  //изменение пароля
   const [repassword, setRepassword] = useState("");
   const [editParamValue, setEditParamValue] = useState("");
   const handlePasswordChange = (e, type) => {
@@ -77,7 +77,7 @@ const EditOfficer = ({
                   className={classes.editButton}
                   onClick={() => handleEditClick("firstName")}
                 >
-                  <img src={edit} alt="edit" />
+                  <BorderColorIcon/>
                 </button>
               </>
             )}
@@ -103,7 +103,7 @@ const EditOfficer = ({
                   className={classes.editButton}
                   onClick={() => handleEditClick("lastName")}
                 >
-                  <img src={edit} alt="edit" />
+                  <BorderColorIcon/>
                 </button>
               </>
             )}
@@ -129,7 +129,7 @@ const EditOfficer = ({
                   className={classes.editButton}
                   onClick={() => handleEditClick("email")}
                 >
-                  <img src={edit} alt="edit" />
+                  <BorderColorIcon/>
                 </button>
               </>
             )}
@@ -159,22 +159,22 @@ const EditOfficer = ({
                   onChange={(e) => handlePasswordChange(e, "repassword")}
                 />
               </div>
-              <button className={classes.button} onClick={saveNewPassword}>
+              <StyledButton className={classes.button} onClick={saveNewPassword}>
                 Сохранить пароль
-              </button>
+              </StyledButton>
             </>
           ) : (
-            <button
+            <StyledButton
               className={classes.button}
               onClick={() => setEditParam("password")}
             >
               Изменить пароль
-            </button>
+            </StyledButton>
           )}
         </div>
-        <button className={classes.close} onClick={closeEditOfficer}>
-          <img src={close} className={classes.closeImage} alt="Х" />
-        </button>
+        <StyledIconButton className={classes.close} onClick={closeEditOfficer}>
+          <CancelIcon className={classes.closeImage}/>
+        </StyledIconButton>
       </div>
     </div>
   );

@@ -1,35 +1,47 @@
 import React from "react";
 import useStyles from './Officers.module'
+import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
 import {StyledButton} from 'Style/components'
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
 
 const Officer = ({ officer, editOfficer, deleteOfficer, openEditOfficer }) => {
   const classes = useStyles()
+
   return (
-    <div className={classes.officer}>
-      <button
-        to={`/officers/${officer._id}`}
-        className={classes.name}
-        onClick={() => openEditOfficer(officer._id)}
+    <Card className={classes.root}>
+      <div className={classes.details}>
+        <CardContent className={classes.content}>
+          <button
+            to={`/officers/${officer._id}`}
+            className={classes.name}
+            onClick={() => openEditOfficer(officer._id)}
+          >
+            <Typography component="h4" variant="h4">
+              {officer.firstName} {officer.lastName}
+              {officer.approved ? <AssignmentTurnedInIcon/> : ""}
+            </Typography>
+          </button>
+        </CardContent>
+      </div>
+      <CardMedia
+        className={classes.cover}
       >
-        {officer.firstName} {officer.lastName}
-        {officer.approved ? <> &#10003;</> : ""}
-      </button>
-      <div className={classes.buttons}>
         <StyledButton
-          //className={classes.button}
           onClick={() => editOfficer({officerId: officer._id, officerData: { approved: true }})}
           disabled={officer.approved}
         >
           Одобрить
         </StyledButton>
         <StyledButton 
-          // className={classes.button} 
           onClick={() => deleteOfficer({ officerId: officer._id })}
         >
           Удалить
         </StyledButton>
-      </div>
-    </div>
+      </CardMedia>
+    </Card>
   );
 };
 

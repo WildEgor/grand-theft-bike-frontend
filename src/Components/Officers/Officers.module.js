@@ -2,6 +2,32 @@ import { makeStyles } from '@material-ui/core/styles';
 import { rgba } from 'Utils/css-utils';
 
 const useStyles = makeStyles(theme => ({
+    root: {
+        display: 'flex',
+        margin: '10px'
+    },
+    details: {
+        display: 'flex',
+        flexDirection: 'column',
+        minWidth: '250px'
+    },
+    content: {
+        flex: '1 0 auto',
+    },
+    cover: {
+        width: 151,
+        borderLeft: `1px solid ${theme.palette.primary.main}`
+    },
+    controls: {
+        display: 'flex',
+        alignItems: 'center',
+        paddingLeft: theme.spacing(1),
+        paddingBottom: theme.spacing(1),
+    },
+    playIcon: {
+        height: 38,
+        width: 38,
+    },
     title: {
         marginBottom: '10px',
         color: theme.palette.common.white
@@ -15,11 +41,11 @@ const useStyles = makeStyles(theme => ({
         maxWidth: '650px',
         flexWrap: 'wrap',
         display: 'flex',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
     },
     officer: {
         width: '300px',
-        margin: '10px',
+        margin: '15px',
         display: 'flex',
         flexDirection: 'column',
         backgroundColor: '#fff',

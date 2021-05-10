@@ -1,6 +1,6 @@
 import React from "react";
 import { Form, Field } from "react-final-form";
-import { Element } from "Src/common/FormControls/FormControls.jsx";
+import {Input} from 'final-form-material-ui';
 import {
   composeValidators,
   required,
@@ -10,7 +10,6 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 import { StyledTypography, StyledButton } from 'Style/components'
 
-const Input = Element("input");
 
 const useStyles = makeStyles(theme => ({
   form: {

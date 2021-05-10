@@ -1,6 +1,5 @@
 import React from "react";
 import { Form, Field } from "react-final-form";
-import { Element } from "../../common/FormControls/FormControls.jsx";
 import {
   composeValidators,
   maxLength,
@@ -8,9 +7,9 @@ import {
   emailType,
 } from "Utils/validator-utils.js";
 import { makeStyles } from '@material-ui/core/styles';
-import {StyledButton, useStyles} from 'Style/components'
+import {Input} from 'final-form-material-ui';
 
-const Input = Element("input");
+import {StyledButton, useStyles} from 'Style/components'
 
 const useCustomStyles = makeStyles(theme => ({
   form: {

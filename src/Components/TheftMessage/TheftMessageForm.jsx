@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { Form, Field } from "react-final-form";
-import { Element } from "Src/common/FormControls/FormControls.jsx";
+import { TextField, Input, Select } from 'final-form-material-ui';
 import {
   composeValidators,
   maxLength,
@@ -12,9 +12,6 @@ import {
 import { typeFormatterToRus } from "Utils/formatter-utils";
 
 import { StyledTypography, StyledButton, useStyles } from 'Style/components'
-
-const Input = Element("input");
-const Textarea = Element("textarea");
 
 const useCustomStyles = makeStyles(theme => ({
   form: {
@@ -108,7 +105,7 @@ const TheftMessageForm = ({ isAuth, onSubmit, officers }) => {
               <StyledTypography>Тип:</StyledTypography>
               <label className={s.radio}>
                 <Field
-                  component="input"
+                  component={Input}
                   className={s.radioDot}
                   type="radio"
                   name="type"
@@ -120,7 +117,7 @@ const TheftMessageForm = ({ isAuth, onSubmit, officers }) => {
 
               <label className={s.radio}>
                 <Field
-                  component="input"
+                  component={Input}
                   className={s.radioDot}
                   type="radio"
                   name="type"
@@ -134,7 +131,7 @@ const TheftMessageForm = ({ isAuth, onSubmit, officers }) => {
           {isAuth ? (
             <div className={classes.string}>
               <StyledTypography>Ответственный сотрудник:</StyledTypography>
-              <Field name="officer" component="select" className={s.input}>
+              <Field name="officer" component={Select} className={s.input}>
                 <option />
 
                 {officers.length > 0
@@ -155,7 +152,7 @@ const TheftMessageForm = ({ isAuth, onSubmit, officers }) => {
           )}
           <StyledTypography>Описание:</StyledTypography>
           <Field
-            component={Textarea}
+            component={TextField}
             name="description"
             className={s.textarea}
             placeholder="Описание"
