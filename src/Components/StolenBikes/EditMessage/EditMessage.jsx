@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import useOfficersStyles from 'Components/Officers/Officers.module'
 import useStolenBikesStyles from '../StolenBikes.module'
+import ModalWin from 'Components/ModalWin/ModalWin.jsx'
 
 import close from "Src/img/close.svg";
 import edit from "Src/img/edit.svg";
@@ -18,6 +19,7 @@ const EditMessage = ({
   formattedThefts,
   officers,
   selectedMessageId,
+  isEditMessageOpen,
   closeEditMessage,
   editMessage,
 }) => {
@@ -56,8 +58,10 @@ const EditMessage = ({
   };
 
   return (
-    <div className={style.modalBackground}>
-      <div className={style.modalContainer}>
+    <ModalWin
+          isAddModalOpen={isEditMessageOpen}
+          closeAddModal={closeEditMessage}
+        >
         <h1 className={style.title}>Информация о краже</h1>
         <div className={style.infoModule}>
           <div className={style.string}>
@@ -307,8 +311,7 @@ const EditMessage = ({
         <button className={style.close} onClick={closeEditMessage}>
           <img src={close} className={style.closeImage} alt="Х" />
         </button>
-      </div>
-    </div>
+  </ModalWin>
   );
 };
 

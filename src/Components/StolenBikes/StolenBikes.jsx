@@ -18,6 +18,7 @@ const StolenBikes = ({
   selectedMessageId,
   openEditMessage,
   closeEditMessage,
+  isEditMessageOpen,
 }) => {
   const columns = React.useMemo(
     () => [
@@ -113,6 +114,7 @@ const StolenBikes = ({
           selectedMessageId={selectedMessageId}
           closeEditMessage={closeEditMessage}
           editMessage={editMessage}
+          isEditMessageOpen={isEditMessageOpen}
         />
       ) : (
         ""

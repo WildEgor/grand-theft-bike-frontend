@@ -3,12 +3,14 @@ import useStyles from 'Components/Officers/Officers.module'
 import CancelIcon from '@material-ui/icons/Cancel';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
 import {StyledButton, StyledIconButton} from 'Style/components'
+import ModalWin from 'Components/ModalWin/ModalWin.jsx'
 
 const EditOfficer = ({
   officers,
   selectedOfficerId,
   closeEditOfficer,
   editOfficer,
+  isEditOfficerOpen
 }) => {
   const classes = useStyles()
   const currentOfficer = officers.find(
@@ -52,9 +54,11 @@ const EditOfficer = ({
   };
 
   return (
-    <div className={classes.modalBackground}>
-      <div className={classes.modalContainer}>
-        <h1 className={classes.title}>Информация о сотруднике</h1>
+    <ModalWin
+      isAddModalOpen={isEditOfficerOpen}
+      closeAddModal={closeEditOfficer}
+    >
+    <h1 className={classes.title}>Информация о сотруднике</h1>
         <div className={classes.infoModule}>
           <div className={classes.string}>
             <span className={classes.stringTitle}>Имя:&nbsp;</span>
@@ -172,11 +176,7 @@ const EditOfficer = ({
             </StyledButton>
           )}
         </div>
-        <StyledIconButton className={classes.close} onClick={closeEditOfficer}>
-          <CancelIcon className={classes.closeImage}/>
-        </StyledIconButton>
-      </div>
-    </div>
+    </ModalWin>
   );
 };
 

@@ -40,8 +40,15 @@ const StolenBikesContainer = () => {
   };
 
   const [selectedMessageId, setSelectedMessageId] = useState(null);
-  const openEditMessage = (id) => setSelectedMessageId(id);
-  const closeEditMessage = () => setSelectedMessageId(null);
+  const [isEditMessageOpen, setIsEditMessageOpen] = useState(false);
+  const openEditMessage = (id) => {
+    setSelectedMessageId(id)
+    setIsEditMessageOpen(true)
+  };
+  const closeEditMessage = () => {
+    setSelectedMessageId(null)
+    setIsEditMessageOpen(false)
+  };
 
   const formattedThefts = [];
   if (thefts) {
@@ -79,6 +86,7 @@ const StolenBikesContainer = () => {
       selectedMessageId={selectedMessageId}
       openEditMessage={openEditMessage}
       closeEditMessage={closeEditMessage}
+      isEditMessageOpen={isEditMessageOpen}
     />
   );
 };

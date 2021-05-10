@@ -1,6 +1,7 @@
 import React from "react";
 import Officer from "./Officer.jsx";
-import ModalAddOfficer from "./Add/ModalAddOfficer.jsx";
+import ModalWin from "Components/ModalWin/ModalWin.jsx";
+import UserCreateForm from "Components/UserCreate/UserCreateForm.jsx";
 import EditOfficer from "./Edit/EditOfficer.jsx";
 import useStyles from './Officers.module'
 import {StyledButton} from 'Style/components'
@@ -10,6 +11,7 @@ const Officers = ({
   editOfficer,
   deleteOfficer,
   isAddModalOpen,
+  isEditModalOpen,
   openAddModal,
   closeAddModal,
   onAddOfficerSubmit,
@@ -33,10 +35,16 @@ const Officers = ({
         ))}
       </div>
       {isAddModalOpen && (
-        <ModalAddOfficer
+        <ModalWin
+          isAddModalOpen={isAddModalOpen}
+          openAddModal={openAddModal}
           closeAddModal={closeAddModal}
-          onAddOfficerSubmit={onAddOfficerSubmit}
-        />
+        >
+          <UserCreateForm
+            onSubmit={onAddOfficerSubmit}
+            buttonName="Добавить сотрудника"
+          />
+        </ModalWin>
       )}
       {selectedOfficerId && (
         <EditOfficer
@@ -44,6 +52,7 @@ const Officers = ({
           selectedOfficerId={selectedOfficerId}
           editOfficer={editOfficer}
           closeEditOfficer={closeEditOfficer}
+          isEditOfficerOpen={isEditModalOpen}
         />
       )}
       <StyledButton onClick={openAddModal}>

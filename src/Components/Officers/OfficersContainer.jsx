@@ -24,6 +24,7 @@ const OfficersContainer = () => {
   }, []);
 
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const openAddModal = () => setIsAddModalOpen(true);
   const closeAddModal = () => setIsAddModalOpen(false);
   const onAddOfficerSubmit = (officerData) => {
@@ -32,8 +33,8 @@ const OfficersContainer = () => {
   };
 
   const [selectedOfficerId, setSelectedOfficerId] = useState(null);
-  const openEditOfficer = (id) => setSelectedOfficerId(id);
-  const closeEditOfficer = () => setSelectedOfficerId(null);
+  const openEditOfficer = (id) => {setSelectedOfficerId(id); setIsEditModalOpen(true)};
+  const closeEditOfficer = () => {setSelectedOfficerId(null); setIsEditModalOpen(false)};
 
   if (!isAuth) 
     return <Redirect to={"/"} />;
@@ -42,6 +43,7 @@ const OfficersContainer = () => {
     <Officers
       officers={officers}
       isAddModalOpen={isAddModalOpen}
+      isEditModalOpen={isEditModalOpen}
       selectedOfficerId={selectedOfficerId}
       editOfficer={editOfficer}
       deleteOfficer={deleteOfficer}
