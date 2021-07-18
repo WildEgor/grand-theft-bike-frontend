@@ -1,4 +1,17 @@
 # grand-theft-bike
+<p align="center">
+ <img src="https://github.com/wildegor/grand-theft-bike/blob/main/screenshots/Screenshot_5.png?raw=true" width="350" alt="accessibility text">
+ <img src="https://github.com/wildegor/grand-theft-bike/blob/main/screenshots/Screenshot_6.png?raw=true" width="350" alt="accessibility text">
+ <img src="https://github.com/wildegor/grand-theft-bike/blob/main/screenshots/Screenshot_7.png?raw=true" width="350" alt="accessibility text">
+ <img src="https://github.com/wildegor/grand-theft-bike/blob/main/screenshots/Screenshot_9.png?raw=true" width="350" alt="accessibility text">
+ <img src="https://github.com/wildegor/grand-theft-bike/blob/main/screenshots/Screenshot_11.png?raw=true" width="350" alt="accessibility text">
+ <img src="https://github.com/wildegor/grand-theft-bike/blob/main/screenshots/Screenshot_12.png?raw=true" width="350" alt="accessibility text">
+ <img src="https://github.com/wildegor/grand-theft-bike/blob/main/screenshots/Screenshot_13.png?raw=true" width="350" alt="accessibility text">
+ <img src="https://github.com/wildegor/grand-theft-bike/blob/main/screenshots/Screenshot_14.png?raw=true" width="350" alt="accessibility text">
+ <img src="https://github.com/wildegor/grand-theft-bike/blob/main/screenshots/Screenshot_15.png?raw=true" width="350" alt="accessibility text">
+ <img src="https://github.com/wildegor/grand-theft-bike/blob/main/screenshots/Screenshot_1.jpg?raw=true" width="350" alt="accessibility text">
+ <img src="https://github.com/wildegor/grand-theft-bike/blob/main/screenshots/Screenshot_4.png?raw=true" width="350" alt="accessibility text">
+</p>
 
 Задание
 Известная компания, занимающаяся прокатом велосипедов в крупных городах России, испытывает проблемы с частой кражей их имущества (велосипедов). Как возможное решение проблемы, компания хочет вести учет этих случаев и отслеживать прогресс. Их собственные разработчики уже подготовили серверную часть приложения (API http://84.201.129.203:8888/), требуется реализовать клиентскую часть.
