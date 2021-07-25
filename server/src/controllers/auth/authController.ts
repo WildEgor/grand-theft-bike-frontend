@@ -1,24 +1,33 @@
-import passport from 'passport';
-import standarts from '../../config/standarts';
-import errors from '../../config/errors';
-import { Request, Response, NextFunction } from "express";
+import { Request, Response, NextFunction, Router } from 'express';
+import Controller from "../../interfaces/controller.interface";
+// import AuthService from "../../services/auth/AuthService";
+import validationMiddleware from "../../middlewares/validation";
+import CreateUserDto from "../../models/User/user.dto";
+class AuthController implements Controller {
+    public path = '/auth';
+    public router = Router();
 
-module.exports = {
-    auth(req: Request, res: Response, next: NextFunction) {
-        const response = Object.create(standarts.standartResponse);
-        passport.authenticate('jwt', {}, (err: Error, user: any) => {
-            if (err) errors.unknownError(req, res, err);
+    constructor(){
+        this.initializeRoutes()
+    }
 
-            if (user) {
-                return next();
-            }
-            response.success = false;
-            response.msg = 'User credentials invalid';
+    private initializeRoutes() {
+        this.router.post(`${this.path}/sign_in`, validationMiddleware(CreateUserDto), this.login)
+        this.router.post(`${this.path}/sign_up`, validationMiddleware(CreateUserDto), this.register)
+        this.router.post(`${this.path}/logout`, validationMiddleware(CreateUserDto), this.logout)
+    }
 
-            return res.status(401).json(response);
-        })(req, res, next);
-    },
-    test(req: Request, res: Response) {
-        res.send('Authenticated!');
-    },
-};
+    private login(request: Request, response: Response, next: NextFunction) {
+        // AuthService.login()
+    }
+
+    private register(request: Request, response: Response, next: NextFunction) {
+        // AuthService.register()
+    }
+
+    private logout(request: Request, response: Response, next: NextFunction) {
+        // AuthService.logout()
+    }
+}
+
+export default AuthController;

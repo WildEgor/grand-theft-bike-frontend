@@ -1,18 +1,42 @@
 import express from "express";
 import enableDestroy from "server-destroy";
+import { connect } from "mongoose";
 import middleware from "./middlewares";
 import config from "./config/env";
 import log from "./dev/logger";
-
+import Controller from "./interfaces/controller.interface";
 class App {
     public app: express.Application;
     private server: any;
-    public logger: typeof log;
+    private logger: typeof log = log;
 
-    constructor() {
+    constructor(controllers: Controller[]) {
         this.app = express();
+
+        this.initializeControllers(controllers);
         this.initializeMiddlewares();
-        this.listen()
+        this.initializeLogger()
+        this.connectToTheDatabase().then(() => this.listen()).catch((error) => this.logger.error('Connect MongoDB: %O', error))
+    }
+
+    private async connectToTheDatabase() {
+        const {
+            username,
+            password,
+            uri,
+            port
+        } = config.db;
+        
+        await connect(`mongodb://${username}:${password}${uri}:${port}`);
+    }
+
+    private initializeControllers(controllers: Controller[]) {
+        controllers.forEach((controller) => {
+          this.app.use('/', controller.router);
+        });
+    }
+
+    private initializeLogger() {
         this.logger = log;
     }
 

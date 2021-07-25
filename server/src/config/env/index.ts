@@ -22,6 +22,32 @@ const config = convict({
             env: 'JWT_VALUE',
         }
     },
+    db: {
+        username: {
+            doc: 'MongoDB username',
+            format: String,
+            default: 'root',
+            env: 'DB_USERNAME',
+        },
+        password: {
+            doc: 'MongoDB password',
+            format: String,
+            default: '123',
+            env: 'DB_PASSWORD',
+        },
+        uri: {
+            doc: 'MongoDB URI',
+            format: 'ipaddress',
+            default: '127.0.01',
+            env: 'DB_URI',
+        },
+        port: {
+            doc: 'MongoDB default port',
+            format: 'port',
+            default: 27017,
+            env: 'DB_PORT',
+        }
+    },
     // TODO: fix logger messages, when use prod it's allowed 'info' and 'error'!
     logLevel: {
         doc: 'The output log level',

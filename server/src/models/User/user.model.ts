@@ -1,7 +1,11 @@
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
 
-import config from '../config/env';
+import config from '../../config/env';
+
+interface IUser extends mongoose.Document{
+  email:string
+}
 
 const userSchema = new mongoose.Schema(
     {
@@ -35,14 +39,10 @@ const userSchema = new mongoose.Schema(
     },
   );
 
-interface IUser extends mongoose.Document{
-    email:string
-}
-
 // eslint-disable-next-line no-unused-vars
 userSchema.virtual('getToken').get(function (this: IUser){
     const { email } = this;
     return jwt.sign({ email }, config.server.jwtValue);
 });
 
-module.exports = mongoose.model('User', userSchema);
+export default mongoose.model('User', userSchema);
