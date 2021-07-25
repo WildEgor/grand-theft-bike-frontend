@@ -1,7 +1,7 @@
 import express from "express";
 import enableDestroy from "server-destroy";
 import middleware from "./middlewares";
-import config from "./config";
+import config from "./config/env";
 import log from "./dev/logger";
 
 class App {

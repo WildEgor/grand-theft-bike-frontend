@@ -1,5 +1,5 @@
 import winston, { format, transports } from 'winston';
-import config from "../../config";
+import config from "../../config/env";
 
 const logFormat = format.printf(
   info => `${info.timestamp} ${info.level} [${info.label}]: ${info.message}`,
