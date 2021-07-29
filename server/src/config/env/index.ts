@@ -57,9 +57,8 @@ const config = convict({
     }
 });
    
-//const env = config.get('env');
-//config.loadFile(`./config/env/${env}.json`);
-
-//config.validate({ allowed: 'strict' }); // throws error if config does not conform to schema
+// const env = config.get('env');
+// config.loadFile(`./config/env/${env}.json`);
+// config.validate({ allowed: 'strict' }); // throws error if config does not conform to schema
 
 export default config.getProperties(); // so we can operate with a plain old JavaScript object and abstract away convict (optional)

@@ -3,6 +3,7 @@ import Controller from "../../interfaces/controller.interface";
 // import AuthService from "../../services/auth/AuthService";
 import validationMiddleware from "../../middlewares/validation";
 import CreateUserDto from "../../models/User/user.dto";
+
 class AuthController implements Controller {
     public path = '/auth';
     public router = Router();
@@ -17,15 +18,15 @@ class AuthController implements Controller {
         this.router.post(`${this.path}/logout`, validationMiddleware(CreateUserDto), this.logout)
     }
 
-    private login(request: Request, response: Response, next: NextFunction) {
+    login = (request: Request, response: Response, next: NextFunction) => {
         // AuthService.login()
     }
 
-    private register(request: Request, response: Response, next: NextFunction) {
+    register = (request: Request, response: Response, next: NextFunction) => {
         // AuthService.register()
     }
 
-    private logout(request: Request, response: Response, next: NextFunction) {
+    logout = (request: Request, response: Response, next: NextFunction) => {
         // AuthService.logout()
     }
 }
