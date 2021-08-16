@@ -22,21 +22,6 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         schema: TokenSchema,
       },
     ]),
-    ClientsModule.register([
-      {
-        name: 'TOKEN_SERVICE',
-        transport: Transport.KAFKA,
-        options: {
-          client: {
-            clientId: 'kafka',
-            brokers: ['kafka:9093'],
-          },
-          consumer: {
-            groupId: 'kafka-consumer'
-          }
-        }
-      },
-    ]),
   ],
   controllers: [TokenController],
   providers: [TokenService],

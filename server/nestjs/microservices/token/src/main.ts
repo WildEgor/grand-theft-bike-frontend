@@ -16,7 +16,19 @@ import { ConfigService } from './services/config/config.service';
 // }
 
 async function bootstrap() {
-  const app = await NestFactory.createMicroservice<MicroserviceOptions>(TokenModule);
+  const app = await NestFactory.createMicroservice<MicroserviceOptions>(TokenModule, {
+    transport: Transport.KAFKA,
+    options: {
+      client: {
+        clientId: 'kafka',
+        brokers: ['kafka:9093'],
+      },
+      consumer: {
+        groupId: 'kafka-consumer'
+      }
+    }
+  },
+  );
   
   await app.listen();
 }
