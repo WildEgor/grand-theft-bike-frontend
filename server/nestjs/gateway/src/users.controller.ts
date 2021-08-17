@@ -39,23 +39,8 @@ import { ConfirmUserResponseDto } from './interfaces/user/dto/confirm-user-respo
 export class UsersController implements OnModuleInit, OnModuleDestroy {
   constructor(
     @Inject('USER_SERVICE') private readonly userServiceClient: ClientProxy,
-    // @Inject('TOKEN_SERVICE') private readonly tokenServiceClient: ClientKafka,
+    @Inject('TOKEN_SERVICE') private readonly tokenServiceClient: ClientKafka,
   ) {}
-
-  @Client({
-    transport: Transport.KAFKA,
-    options: {
-      client: {
-        clientId: 'kafka',
-        brokers: ['kafka:9093'],
-      },
-      consumer: {
-        groupId: 'kafka-consumer'
-      }
-    }
-  })
-  tokenServiceClient: ClientKafka;
-  
 
   async onModuleInit() {
     this.tokenServiceClient.subscribeToResponseOf('token_create');

@@ -8,10 +8,15 @@ export class ConfigService {
     this.envConfig.port = process.env.API_GATEWAY_PORT;
     this.envConfig.tokenService = {
       options: {
-        port: process.env.TOKEN_SERVICE_PORT,
-        host: process.env.TOKEN_SERVICE_HOST,
+        client: {
+          clientId: process.env.TOKEN_SERVICE_HOST,
+          brokers: [`${process.env.TOKEN_SERVICE_HOST}:${process.env.TOKEN_SERVICE_PORT}`],
+        },
+        consumer: {
+          groupId: 'kafka-consumer'
+        }
       },
-      transport: Transport.TCP,
+      transport: Transport.KAFKA,
     };
     this.envConfig.userService = {
       options: {

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "preinstall": "cd ./config && node installer.js",
-    "start": "docker network prune && docker network create infrastructure && docker-compose up -d",
+    "start": "docker-compose stop && docker network prune && docker network create infrastructure && docker-compose up -d",
     "lint": "npm --prefix task run lint && npm --prefix user run lint && npm --prefix token run lint && npm --prefix gateway run lint && npm --prefix mailer run lint && npm --prefix permission run lint"
   },
   "repository": {
