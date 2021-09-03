@@ -13,7 +13,7 @@ const officersModel = {
 
     if (!getOfficersError && getOfficersData.status === 200) {
       console.log(getOfficersData, getOfficersError);
-      actions.updateOfficerList(getOfficersData.data);
+      actions.updateOfficerList(getOfficersData.data.data);
     } else alert(getOfficersError);
   }),
   addNewOfficer: thunk(async (actions, payload, { getState, getStoreState }) => {

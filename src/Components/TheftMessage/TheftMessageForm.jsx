@@ -138,7 +138,7 @@ const TheftMessageForm = ({ isAuth, onSubmit, officers }) => {
                   ? officers.map((officer) => {
                       if (officer.approved) {
                         return (
-                          <option value={officer._id} key={officer._id}>
+                          <option value={officer.id} key={officer.id}>
                             {officer.firstName} {officer.lastName}
                           </option>
                         );

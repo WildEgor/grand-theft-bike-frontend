@@ -1,5 +1,5 @@
 const config = {
-     BASE_URL: 'http://84.201.129.203:8888/api/',
+     BASE_URL: 'http://localhost:5000/api/',
      MY_CLIENT_ID: "a2FydGFzaG92X2Vnb3I5NkBtYWlsLnJ1"
 };
 

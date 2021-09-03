@@ -35,7 +35,9 @@ const authModel = {
   signIn: thunk(async (actions, payload, { getState }) => {
     const [signInData, signInError] = await handlePromise(authAPI.signIn(payload));
 
-    if (!signInError && signInData.status === 200) {
+    console.log(signInData);
+
+    if (!signInError && (signInData.data.status === 200 || signInData.status === 201)) {
       const { token } = signInData.data;
       actions.authMeSuccess(token);
       localStorage.setItem('bikeTheftAuthorization', JSON.stringify({ token, isAuth: true }));

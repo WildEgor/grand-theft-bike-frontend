@@ -26,7 +26,7 @@ const Officers = ({
       <div className={classes.officers}>
         {officers.map((officer) => (
           <Officer
-            key={officer._id}
+            key={officer.id}
             officer={officer}
             editOfficer={editOfficer}
             deleteOfficer={deleteOfficer}
