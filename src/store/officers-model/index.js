@@ -11,9 +11,9 @@ const officersModel = {
 
     const [getOfficersData, getOfficersError] = await handlePromise(officersAPI.getOfficers(token));
 
-    if (!getOfficersError && getOfficersData.status === 200) {
+    if (!getOfficersError && getOfficersData.data.status === 200) {
       console.log(getOfficersData, getOfficersError);
-      actions.updateOfficerList(getOfficersData.data.data);
+      actions.updateOfficerList(getOfficersData.data.officers);
     } else alert(getOfficersError);
   }),
   addNewOfficer: thunk(async (actions, payload, { getState, getStoreState }) => {
@@ -23,7 +23,7 @@ const officersModel = {
       officersAPI.addNewOfficer(token, payload)
     );
 
-    if (!addNewOfficerError && addNewOfficerData.status === 200) {
+    if (!addNewOfficerError && addNewOfficerData.data.status === 200) {
       actions.getOfficersList();
     } else alert(addNewOfficerError);
   }),
@@ -36,7 +36,7 @@ const officersModel = {
       officersAPI.editOfficer(token, payload.officerId, payload.officerData)
     );
 
-    if (!editOfficerError && editOfficerData.status === 200) {
+    if (!editOfficerError && editOfficerData.data.status === 200) {
       actions.getOfficersList();
     } else alert(editOfficerError);
   }),
@@ -46,7 +46,7 @@ const officersModel = {
       officersAPI.deleteOfficer(token, payload.officerId)
     );
 
-    if (!deleteOfficerError && deleteOfficerData.status === 200) {
+    if (!deleteOfficerError && deleteOfficerData.data.status === 200) {
       actions.getOfficersList();
     } else alert(deleteOfficerError);
   }),

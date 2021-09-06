@@ -27,9 +27,9 @@ const theftMessageModel = {
       casesAPI.addNewUnauthorizedMessage(newMessage)
     );
 
-    if (!addNewUnauthorizedMessageError && addNewUnauthorizedMessageData.status === 200) {
+    if (!addNewUnauthorizedMessageError && addNewUnauthorizedMessageData.data.status === 200) {
       alert('Ваше сообщение отправлено');
-      actions.addNewMessageSuccess(addNewUnauthorizedMessageData.data);
+      actions.addNewMessageSuccess(addNewUnauthorizedMessageData.data.case);
     } else alert(addNewUnauthorizedMessageError);
   }),
   addNewMessage: thunk(async (actions, payload, { getState, getStoreState }) => {
@@ -57,7 +57,7 @@ const theftMessageModel = {
 
     if (!addNewMessageError && addNewMessageData.status === 200) {
       alert('Ваше сообщение отправлено');
-      actions.addNewMessageSuccess(addNewMessageData.data.data);
+      actions.addNewMessageSuccess(addNewMessageData.data.case);
     } else alert(addNewMessageError);
   }),
   getTheftMessages: thunk(async (actions, payload, { getState, getStoreState }) => {
@@ -69,7 +69,7 @@ const theftMessageModel = {
 
     if (!getAllMessagesError && getAllMessagesData.status === 200) {
       console.log('NEW THEFT', getAllMessagesData);
-      actions.addThefts(getAllMessagesData.data.data);
+      actions.addThefts(getAllMessagesData.data.cases);
     } else alert(getAllMessagesError);
   }),
   deleteMessage: thunk(async (actions, payload, { getState, getStoreState }) => {
@@ -81,7 +81,7 @@ const theftMessageModel = {
 
     if (!deleteMessageError) {
       console.log('deleteMessage', deleteMessageData);
-      actions.deleteMessageSuccess(deleteMessageData.data.data);
+      actions.deleteMessageSuccess(deleteMessageData.data.case);
     } else alert(deleteMessageError);
   }),
   editMessage: thunk(async (actions, payload, { getState, getStoreState }) => {
@@ -95,7 +95,7 @@ const theftMessageModel = {
     );
 
     if (!editMessageError) {
-      actions.editMessageSuccess(editMessageData.data);
+      actions.editMessageSuccess(editMessageData.data.case);
     } else alert(editMessageError);
   }),
   addThefts: action((state, payload) => {
