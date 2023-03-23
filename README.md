@@ -2,17 +2,17 @@
 
 
 <p align="center">
- <img src="https://github.com/wildegor/grand-theft-bike/blob/main/client/screenshots/Screenshot_5.png?raw=true" width="350" alt="accessibility text">
- <img src="https://github.com/wildegor/grand-theft-bike/blob/main/client/screenshots/Screenshot_6.png?raw=true" width="350" alt="accessibility text">
- <img src="https://github.com/wildegor/grand-theft-bike/blob/main/client/screenshots/Screenshot_7.png?raw=true" width="350" alt="accessibility text">
- <img src="https://github.com/wildegor/grand-theft-bike/blob/main/client/screenshots/Screenshot_9.png?raw=true" width="350" alt="accessibility text">
- <img src="https://github.com/wildegor/grand-theft-bike/blob/main/client/screenshots/Screenshot_11.png?raw=true" width="350" alt="accessibility text">
- <img src="https://github.com/wildegor/grand-theft-bike/blob/main/client/screenshots/Screenshot_12.png?raw=true" width="350" alt="accessibility text">
- <img src="https://github.com/wildegor/grand-theft-bike/blob/main/client/screenshots/Screenshot_13.png?raw=true" width="350" alt="accessibility text">
- <img src="https://github.com/wildegor/grand-theft-bike/blob/main/client/screenshots/Screenshot_14.png?raw=true" width="350" alt="accessibility text">
- <img src="https://github.com/wildegor/grand-theft-bike/blob/main/client/screenshots/Screenshot_15.png?raw=true" width="350" alt="accessibility text">
- <img src="https://github.com/wildegor/grand-theft-bike/blob/main/client/screenshots/Screenshot_1.jpg?raw=true" width="350" alt="accessibility text">
- <img src="https://github.com/wildegor/grand-theft-bike/blob/main/client/screenshots/Screenshot_4.png?raw=true" width="350" alt="accessibility text">
+ <img src="https://github.com/wildegor/grand-theft-bike/blob/main/screenshots/Screenshot_5.png?raw=true" width="350" alt="accessibility text">
+ <img src="https://github.com/wildegor/grand-theft-bike/blob/main/screenshots/Screenshot_6.png?raw=true" width="350" alt="accessibility text">
+ <img src="https://github.com/wildegor/grand-theft-bike/blob/main/screenshots/Screenshot_7.png?raw=true" width="350" alt="accessibility text">
+ <img src="https://github.com/wildegor/grand-theft-bike/blob/main/screenshots/Screenshot_9.png?raw=true" width="350" alt="accessibility text">
+ <img src="https://github.com/wildegor/grand-theft-bike/blob/main/screenshots/Screenshot_11.png?raw=true" width="350" alt="accessibility text">
+ <img src="https://github.com/wildegor/grand-theft-bike/blob/main/screenshots/Screenshot_12.png?raw=true" width="350" alt="accessibility text">
+ <img src="https://github.com/wildegor/grand-theft-bike/blob/main/screenshots/Screenshot_13.png?raw=true" width="350" alt="accessibility text">
+ <img src="https://github.com/wildegor/grand-theft-bike/blob/main/screenshots/Screenshot_14.png?raw=true" width="350" alt="accessibility text">
+ <img src="https://github.com/wildegor/grand-theft-bike/blob/main/screenshots/Screenshot_15.png?raw=true" width="350" alt="accessibility text">
+ <img src="https://github.com/wildegor/grand-theft-bike/blob/main/screenshots/Screenshot_1.jpg?raw=true" width="350" alt="accessibility text">
+ <img src="https://github.com/wildegor/grand-theft-bike/blob/main/screenshots/Screenshot_4.png?raw=true" width="350" alt="accessibility text">
 </p>
 
 Задание
